@@ -1,0 +1,11 @@
+nav a {
+  text-decoration: none;  /* removes underline */
+  color: #333;            /* dark grey, not blue/purple */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;       /* optional, makes it bolder */
+  margin-right: 1rem;     /* spacing between links */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
