@@ -2,4 +2,4 @@
 
 decided to learn astro 👀
 
-website is live at limits.to
+website is live at <https://limits.to>
