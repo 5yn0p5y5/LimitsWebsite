@@ -1,20 +1,9 @@
 ---
-// src/pages/index.astro
-import Navbar from '../components/navbar.astro';
-import '../styles/global.css';
+import Base from '../layouts/Base.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Limits</title>
-    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml"/>
-  </head>
-  <body style="margin:0; font-family:sans-serif;">
-    <Navbar />
 
-    <main style="display:flex; justify-content:center; align-items:center; height:calc(100vh - 80px);">
-      <img src="/assets/bard.png" alt="Product" style="max-width:80%; height:auto;" />
-    </main>
-  </body>
-</html>
+<Base title="limits">
+  <div slot="hero" style="display:flex; justify-content:center; align-items:center; height:calc(100vh - var(--nav-height)); width:100%;">
+    <img src="/assets/bard.png" alt="Product" style="max-width:80%; height:auto;" />
+  </div>
+</Base>

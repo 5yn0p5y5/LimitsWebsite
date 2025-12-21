@@ -1,16 +1,19 @@
 ---
 // src/components/Navbar.astro
 ---
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:1rem;">
-  <!-- Left side -->
-  <div style="display:flex; align-items:center; gap:1rem;">
-    <img src="/assets/logoAll.svg" alt="Limits" height="40"/>
-    <a href="#about">About</a>
-    <a href="#store">Store</a>
-  </div>
+<nav>
+  <div class="container">
+    <div class="left">
+      <a href="/" class="logo-link" aria-label="Home">
+        <img class="logo" src="/assets/logoAll.svg" alt="Limits" />
+      </a>
+      <a href="/about">about</a>
+      <a href="/store">store</a>
+    </div>
 
-  <!-- Right side -->
-  <div style="display:flex; align-items:center; gap:1rem;">
-    <!-- Placeholder for search / cart later -->
+    <!-- Right side -->
+    <div class="right">
+      <!-- Placeholder -->
+    </div>
   </div>
 </nav>
