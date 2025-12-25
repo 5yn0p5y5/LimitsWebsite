@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SOURCE="/home/bryce/LimitsWebsite/dist/"
+DEST_USER="root"
+DEST_HOST="192.168.0.41"
+DEST_PATH="/var/www/LimitsWebsite/"
+
+rsync -av --delete \
+  "$SOURCE" \
+  "${DEST_USER}@${DEST_HOST}:${DEST_PATH}"

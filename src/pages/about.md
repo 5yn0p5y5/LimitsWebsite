@@ -13,4 +13,6 @@ Our first product, the Ohm Keyboard is not innovative, but that's a calculated d
 
 Feedback is welcome on what we should build next!
 
+v1
+
 ![sink](/assets/sink.webp)

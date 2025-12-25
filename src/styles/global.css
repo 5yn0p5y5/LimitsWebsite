@@ -1,20 +1,22 @@
 :root {
-  --nav-bg: #8d8d8db6;       /* change to your brand color */
+  --nav-bg: #8d8d8d;        /* opaque by default to avoid tinting content */
   --nav-height: 64px;
   --nav-link-color: #333;
   --nav-link-hover: #4b5677; /* pick your hover color */
-}
+} 
 
 nav {
   width: 100%;
   background: var(--nav-bg);
-  position: sticky;        /* or `fixed` if you want it always pinned */
+  position: fixed;         /* keep the nav visible when scrolling */
   top: 0;
-  z-index: 1000;
+  left: 0;
+  right: 0;
+  z-index: 10000;         /* higher so it overlays content */
   box-shadow: 0 1px 0 rgba(0,0,0,0.06);
   font-family: "Roboto Mono", monospace;
   font-weight: 800;
-}
+} 
 
 /* keep nav content centered and constrained */
 nav .container {
@@ -61,9 +63,27 @@ nav .left a:focus-visible {
   :root { --nav-height: 56px; }
 }
 
+/* Enable scroll snapping so each section can snap to the viewport */
+html, body {
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto Condensed", sans-serif;
+  background: #fff; /* initial page background */
+  color: #111;
+  transition: background-color 420ms ease; /* smooth transitions if background changes */
+  padding-top: var(--nav-height); /* offset content so a fixed nav doesn't cover it */
 }
+
+:root {
+  /* pick a base size — 16px is default; 18px is a bit larger */
+  --base-font-size: 18px;
+}
+html { font-size: var(--base-font-size); }   /* sets 1rem = 18px */
+body { font-size: 1rem; }   
 
 /* Navbar sizing variables */
 :root {
@@ -132,4 +152,28 @@ nav .right { /* keeps placeholder area available */
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: calc(100vh - var(--nav-height)); /* fill viewport so hero covers the initial view */
+  background: #fff; /* keep hero area white so below color isn't visible on load */
+  scroll-snap-align: start;
 }
+
+/* A full-height section that allows exact one-viewport scrolling */
+.fullpage {
+  width: 100vw; /* full-bleed background across the viewport */
+  margin-left: calc(50% - 50vw); /* ensure full-bleed while keeping inner content centered */
+  min-height: calc(100vh - var(--nav-height));
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--below-bg, #a3a3a3);
+}
+
+/* Keep the inner wrapper constrained but transparent so the section background shows fully */
+.fullpage > div {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+} 
